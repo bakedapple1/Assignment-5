@@ -1,9 +1,19 @@
+import axios from "axios";
+import { useState, useEffect } from "react";
+
 function Footer() {
+
+    useEffect(() => {
+        async function getData() {
+            setMovies((await axios.get(`https://api.themoviedb.org/3/movie/${location}?api_key=${import.meta.env.VITE_TMDB_KEY}`)).data.results);
+        };
+
+        getData();
+    }, [location]);
 
     return (
         <>
             <hr />
-            
             <div class="footer">
                 <div class="footer-links">
                     <a id="github" href="https://github.com/bakedapple1/Assignment-2" target="_blank">GitHub</a>

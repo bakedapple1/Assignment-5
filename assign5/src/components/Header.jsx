@@ -1,16 +1,16 @@
 function Header() {
 
     return (
-        <div class="nav-bar">
-            <div class="logo">
+        <div className="nav-bar">
+            <div className="logo">
                 BingeBerry
             </div>
 
-            <div class="buttons">
-                <button class="sign-up">
+            <div className="buttons">
+                <button className="sign-up">
                     Sign up
                 </button>
-                <button class="log-in">
+                <button className="log-in">
                     Log in
                 </button>
             </div>

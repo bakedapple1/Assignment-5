@@ -1,17 +1,16 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomeView from './views/HomeView.jsx'
 import './App.css'
-import Header from './components/Header.jsx'
-import Feature from './components/Feature.jsx'
-import Hero from './components/Hero.jsx'
-import Footer from './components/Footer.jsx'
 
 function App() {
 
   return (
     <>
-      <Header />
-      <Hero />
-      <Feature />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomeView />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

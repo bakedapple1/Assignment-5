@@ -4,8 +4,9 @@ import { useState, useEffect } from "react";
 
 function Featured() {
 
-    const [movies, setMovies] = ([]);
+    const [movies, setMovies] = useState([]);
     const location = "now_playing";
+    let threeMovies = [];
 
     useEffect(() => {
         async function getData() {

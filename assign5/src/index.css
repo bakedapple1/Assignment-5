@@ -152,9 +152,15 @@ body {
     align-items: center;
 }
 
+.mov {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
 .mov-label {
-    font-size: 40px;
-    width: 380px;
+    font-size: 35px;
+    width: auto;
 }
 
 .featured-header {

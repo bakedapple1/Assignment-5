@@ -1,8 +1,11 @@
+import HeroBanner from "../assets/Hero banner.png";
+
 function Hero() {
 
     return (
         <div className="hero">
-            <h1 className="hero-label">All-You-Can-Binge</h1>
+            <label className="hero-label" htmlFor="hero-poster">ALL-YOU-CAN-BINGE</label>
+            <img id="hero-poster" className="hero-poster" src={HeroBanner} />
         </div>
     );
 }

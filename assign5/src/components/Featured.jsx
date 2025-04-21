@@ -13,10 +13,11 @@ function Featured() {
             const movies = (await axios.get(`https://api.themoviedb.org/3/movie/${location}?api_key=${import.meta.env.VITE_TMDB_KEY}`)).data.results;
             const selectedMovies = new Set();
 
-            while (selectedMovies.size < 3 && movies.length > 0) {
+            while (selectedMovies.size < 6 && movies.length > 0) {
                 selectedMovies.add(movies[Math.floor(Math.random()*movies.length)]);
             }
             setThreeMovies([...selectedMovies]);
+            console.log([...selectedMovies], selectedMovies);
         };
 
         getData();
@@ -28,8 +29,8 @@ function Featured() {
             <div className="featured-movies">
                 {threeMovies && threeMovies.map(movie => (
                     <div id="mov" className="mov" key={movie.id} onClick={() => navigate(`/movies/${movie.id}`)}>
-                        <h1 className="mov-label">{`${movie.title}`}</h1>
                         <img className="movie-poster" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`${movie.id}`} />
+                        <h1 className="mov-label">{`${movie.title}`}</h1>
                     </div>
                 ))}
             </div>

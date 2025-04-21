@@ -17,7 +17,6 @@ function Featured() {
                 selectedMovies.add(movies[Math.floor(Math.random()*movies.length)]);
             }
             setThreeMovies([...selectedMovies]);
-            console.log([...selectedMovies], selectedMovies);
         };
 
         getData();

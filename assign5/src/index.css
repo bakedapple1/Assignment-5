@@ -124,37 +124,36 @@
     grid-template-rows: repeat(2, auto);
     margin: auto;
     margin-top: 100px;
-    width: 1500px;
+    width: 1750px;
 }
 
 .featured-movies {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, auto);
-    height: 1100px;
-    width: 1500px;
+    height: 750px;
+    width: 1750px;
     justify-items: center;
     align-items: center;
-    margin: auto;
 }
 
 .mov-label {
     font-size: 40px;
+    width: 380px;
 }
 
 .featured-header {
     font-size: 90px;
 }
 
-.poster {
-    width: 300px;
-    height: 450px;
+.movie-poster {
+    width: 380px;
+    height: 570px;
     transition: 1s;
 }
 
-.poster:hover {
-    width: 330px;
-    height: 495px;
+.movie-poster:hover {
+    width: 418px;
+    height: 627px;
 }
 
 /* FOOTER SECTION */

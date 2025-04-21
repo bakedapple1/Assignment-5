@@ -5,7 +5,7 @@ function Footer() {
             <hr />
             <div className="footer">
                 <div className="footer-links">
-                    <a className="footer-link" id="github" href="https://github.com/bakedapple1/Assignment-2" target="_blank">GitHub</a>
+                    <a className="footer-link" id="github" href="https://github.com/bakedapple1/Assignment-5" target="_blank">GitHub</a>
                     <a className="footer-link" id="license"
                         href="https://preview.redd.it/what-are-some-funny-license-plates-youve-seen-in-ottawa-v0-w3pu1v029tub1.jpg?width=640&crop=smart&auto=webp&s=2fa076cb07306240e492631ca6178d3e9bcce591"
                         target="_blank">Licence Agreement</a>

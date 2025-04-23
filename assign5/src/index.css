@@ -7,7 +7,6 @@ body {
     background-color: rgb(48, 48, 48);
 }
 
-
 /* NAV BAR AND BUTTONS */
 
 .nav-bar {
@@ -26,7 +25,6 @@ body {
 
 .buttons {
     margin-right: 80px;
-    margin-bottom: 5px;
     justify-self: right;
     width: 250px;
     display: grid;
@@ -66,7 +64,6 @@ body {
 
 .logo {
     margin-left: 40px;
-    margin-bottom: 5px;
     justify-self: left;
     font-family: "Dangrek", serif;
     font-weight: 400;
@@ -74,13 +71,13 @@ body {
     font-size: 30px;
     color: rgb(255, 90, 90);
     cursor: pointer;
+    user-select: none;
     text-shadow:
         -1px -1px 0 black,
         1px -1px 0 black,
         -1px 1px 0 black,
         1px 1px 0 black;
 }
-
 
 /* TEXT HEADERS */
 
@@ -94,7 +91,6 @@ body {
     color: rgb(231, 81, 81);
 }
 
-
 /* HERO SECTION */
 
 .hero {
@@ -105,13 +101,13 @@ body {
     display: flex;
     flex-direction: column;
     align-content: center;
+    user-select: none;
 }
 
 .hero-poster {
     width: 90vw;
     margin-top: 1.25vw;
     align-self: center;
-    cursor: pointer;
     transition: 0.8s;
 }
 
@@ -120,17 +116,22 @@ body {
     position: absolute;
     align-self: center;
     margin-top: 10.5%;
+    z-index: 10;
     text-shadow:
         -3px -3px 0 black,
         3px -3px 0 black,
         -3px 3px 0 black,
         3px 3px 0 black;
-        z-index: 10;
 }
 
-.hero-poster:hover {
+.hero:hover .hero-poster {
     margin-top: 0.5vw;
     width: 95vw;
+    cursor: pointer;
+}
+
+.hero:hover .hero-label {
+    cursor: pointer;
 }
 
 /* FEATURED SECTION */
@@ -148,8 +149,8 @@ body {
 .featured-movies {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    height: 1400px;
+    grid-template-rows: auto;
+    height: 1350px;
     width: 1500px;
     justify-items: center;
     align-items: center;
@@ -175,11 +176,11 @@ body {
     height: 570px;
     cursor: pointer;
     transition: 1s;
+    transform: scale(0.9);
 }
 
 .movie-poster:hover {
-    width: 418px;
-    height: 627px;
+    transform: scale(1);
 }
 
 /* FOOTER SECTION */
@@ -225,17 +226,21 @@ body {
 
     .featured-movies {
         grid-template-columns: repeat(2, 1fr);
-        height: 2100px;
+        height: 1850px;
     }
 
     .featured-section {
         margin-top: 75px;
     }
 
+    .movie-poster {
+        width: 350px;
+        height: 525px;
+    }
+
     .hero-label {
         font-size: 100px;
     }
-
 
     .featured-header {
         font-size: 80px;
@@ -250,16 +255,21 @@ body {
 
     .featured-movies,
     .featured-section {
-        width: 300px;
+        width: 500px;
     }
 
     .featured-movies {
         grid-template-columns: 1fr;
-        height: 3300px;
+        height: 3700px;
     }
 
     .featured-section {
         margin-top: 50px;
+    }
+
+    .movie-poster {
+        width: 350px;
+        height: 525px;
     }
 
     .hero-label,

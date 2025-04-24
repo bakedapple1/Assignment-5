@@ -21,7 +21,7 @@ function RegisterView() {
             alert("Passwords do not match!");
             setUserInfo((prev) => ({ ...prev, password: '', confPass: '' }));
         } else {
-
+            setUserData((prevData) => prevData.set(userInfo));
         }
     }
 

@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { StoreProvider } from "./context";
 import HomeView from './views/HomeView.jsx';
 import LoginView from './views/LoginView.jsx';
 import RegisterView from './views/RegisterView.jsx'
@@ -7,7 +8,7 @@ import './App.css';
 function App() {
 
   return (
-    <>
+    <StoreProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomeView />} />
@@ -15,7 +16,7 @@ function App() {
           <Route path="/register" element={<RegisterView />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </StoreProvider>
   )
 }
 

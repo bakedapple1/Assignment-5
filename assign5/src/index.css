@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: rgb(48, 48, 48);
+    background-color: rgb(50, 50, 50);
 }
 
 /* NAV BAR AND BUTTONS */
@@ -13,7 +13,7 @@ body {
     top: 0;
     border: 10px;
     padding: 25px;
-    background: rgb(20, 20, 20);
+    background: rgb(25, 25, 25);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-content: center;

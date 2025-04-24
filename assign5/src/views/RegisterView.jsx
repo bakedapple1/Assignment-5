@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import "./RegisterView.css";
 
 function RegisterView() {
+    const { setUserData } = useStoreContext();
     const [userInfo, setUserInfo] = useState({
         firstName: '',
         lastName: '',
@@ -11,8 +12,6 @@ function RegisterView() {
         password: '',
         confPass: '',
     });
-
-    const { setUserData } = useStoreContext();
 
     function createAccount(event, userInfo) {
         event.preventDefault();

@@ -27,7 +27,7 @@ function Featured() {
             <h1 className="featured-header">Featured</h1>
             <div className="featured-movies">
                 {threeMovies && threeMovies.map(movie => (
-                    <div id="mov" className="mov" key={movie.id} onClick={() => navigate(`/movies/${movie.id}`)}>
+                    <div id="mov" className="mov" key={movie.id} onClick={() => navigate(`/movies/details/${movie.id}`)}>
                         <img className="movie-poster" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`${movie.id}`} />
                         <h1 className="mov-label">{`${movie.title}`}</h1>
                     </div>

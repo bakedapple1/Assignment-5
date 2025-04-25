@@ -5,9 +5,10 @@ const StoreContext = createContext();
 
 export const StoreProvider = ({ children }) => {
     const [userData, setUserData] = useState(Map());
+    const [currentUser, setCurrentUser] = useState();
 
     return (
-        <StoreContext.Provider value={{ userData, setUserData }}>
+        <StoreContext.Provider value={{ userData, setUserData, currentUser, setCurrentUser}}>
             {children}
         </StoreContext.Provider>
     )

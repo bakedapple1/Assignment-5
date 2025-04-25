@@ -1,29 +1,45 @@
+import { useState } from "react";
 import { useStoreContext } from "../context";
+import Header from "../components/Header";
+import "./LoginView.css";
 
 function LoginView() {
-    const { userData } = useStoreContext();
+    const { userData, setCurrentUser } = useStoreContext();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     function checkLogin(event) {
         event.preventDefault();
-        
-        const userInfo = userData.entrySeq().map([key, value]);
+        const user = userData.get(email);
+
+        console.log(userData)
+
+        if (user && user.password == password) {
+            setCurrentUser(email);
+            console.log("logged in");
+        } else {
+            alert("Email or password is wrong.")
+            setEmail("");
+            setPassword("");
+        }
     }
 
     return (
         <div className="login-view">
-        <Header />
-        <div className="login">
-            <h1 className="login-label">Sign Up</h1>
-            <form className="login-form" id="login-form" onSubmit={(event) => { checkLogin(event, userInfo) }}>
-                <label htmlFor="log-first-name">First Name</label>
-                <label htmlFor="log-email">Email</label>
-                <input type="email" name="log-email" id="log-email" value={userInfo.email} onChange={(event) => { setUserInfo((prev) => ({ ...prev, email: event.target.value })) }} required />
-                <label htmlFor="log-pass">Password</label>
-                <input type="password" name="log-pass" id="log-pass" value={userInfo.password} onChange={(event) => { setUserInfo((prev) => ({ ...prev, password: event.target.value })) }} required />
-                <input type="submit" value="Log In" className="submit-button" id="log-submit" />
-            </form>
+            <Header />
+            <div className="login">
+                <div className="login-menu">
+                    <h1 className="login-label">Log In</h1>
+                    <form className="login-form" id="login-form" onSubmit={(event) => { checkLogin(event) }}>
+                        <label htmlFor="log-email" className="log-input-label">Email</label>
+                        <input type="email" name="log-email" id="log-email" className="log-input" value={email} onChange={(event) => { setEmail(event.target.value) }} />
+                        <label htmlFor="log-pass" className="log-input-label">Password</label>
+                        <input type="password" name="log-pass" id="log-pass" className="log-input" value={password} onChange={(event) => { setPassword(event.target.value) }} />
+                        <input type="submit" value="Sign In" className="submit-button" id="log-submit" />
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
     );
 }
 

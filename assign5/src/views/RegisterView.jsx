@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useStoreContext } from "../context";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import "./RegisterView.css";
 
 function RegisterView() {
@@ -55,6 +56,7 @@ function RegisterView() {
                     </form>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

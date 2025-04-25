@@ -15,6 +15,7 @@ input {
 .login {
     display: flex;
     justify-content: center;
+    margin-bottom: 60vh;
 }
 
 .login-menu {

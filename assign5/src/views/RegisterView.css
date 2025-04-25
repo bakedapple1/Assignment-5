@@ -15,6 +15,7 @@ input {
 .register {
     display: flex;
     justify-content: center;
+    margin-bottom: 40vh;
 }
 
 .register-menu {

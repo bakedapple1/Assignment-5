@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useStoreContext } from "../context";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import "./LoginView.css";
 
 function LoginView() {
@@ -39,6 +40,7 @@ function LoginView() {
                     </form>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

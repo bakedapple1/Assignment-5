@@ -17,9 +17,8 @@ function App() {
           <Route path="/" element={<HomeView />} />
           <Route path="/login" element={<LoginView />} />
           <Route path="/register" element={<RegisterView />} />
+          <Route path="/movies" element={<MoviesView />} />
           <Route element={<ProtectedRoutes />}>
-            <Route path="/movies" element={<MoviesView />} >
-            </Route>
           </Route>
           <Route path="*" element={<ErrorView />} />
         </Routes>

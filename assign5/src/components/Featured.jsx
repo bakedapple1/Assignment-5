@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 
 
 function Featured() {
-    const [threeMovies, setThreeMovies] = useState([]);
+    const [sixMovies, setSixMovies] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -15,7 +15,7 @@ function Featured() {
             while (selectedMovies.size < 6 && movies.length > 0) {
                 selectedMovies.add(movies[Math.floor(Math.random()*movies.length)]);
             }
-            setThreeMovies([...selectedMovies]);
+            setSixMovies([...selectedMovies]);
         };
 
         getData();
@@ -25,7 +25,7 @@ function Featured() {
         <div className="featured-section">
             <h1 className="featured-header">Featured</h1>
             <div className="featured-movies">
-                {threeMovies && threeMovies.map(movie => (
+                {sixMovies && sixMovies.map(movie => (
                     <div id="mov" className="mov" key={movie.id} onClick={() => navigate(`/movies/details/${movie.id}`)}>
                         <img className="movie-poster" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`${movie.id}`} />
                         <h1 className="mov-label">{`${movie.title}`}</h1>

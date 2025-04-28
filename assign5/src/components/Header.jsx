@@ -1,8 +1,15 @@
 import { useNavigate } from "react-router-dom";
+import { useStoreContext } from "../context";
 import "./Header.css";
 
 function Header() {
     const navigate = useNavigate();
+    const { userData, currentUser, setCurrentUser } = useStoreContext();
+
+    function logOut() {
+        setCurrentUser(null);
+        alert("Logged out!")
+    }
 
     return (
         <div className="nav-bar">
@@ -10,14 +17,23 @@ function Header() {
                 BingeBerry
             </div>
 
-            <div className="buttons">
-                <button className="sign-up" onClick={() => navigate(`/register`)}>
-                    Sign up
-                </button>
-                <button className="log-in" onClick={() => navigate(`/login`)}>
-                    Log in
-                </button>
-            </div>
+            {currentUser ? (
+                <div className="logged-in">
+                    <p className="welc-msg">Welcome, {userData.get(currentUser).firstName}!</p>
+                    <button className="log-out" onClick={() => logOut()}>
+                        Log out
+                    </button>
+                </div>
+            ) : (
+                <div className="logged-out">
+                    <button className="sign-up" onClick={() => navigate(`/register`)}>
+                        Sign up
+                    </button>
+                    <button className="log-in" onClick={() => navigate(`/login`)}>
+                        Log in
+                    </button>
+                </div>
+            )}
         </div>
     );
 }

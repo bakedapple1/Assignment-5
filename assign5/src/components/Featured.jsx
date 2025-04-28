@@ -5,12 +5,11 @@ import { useNavigate } from "react-router-dom"
 
 function Featured() {
     const [threeMovies, setThreeMovies] = useState([]);
-    const location = "now_playing";
     const navigate = useNavigate();
 
     useEffect(() => {
         async function getData() {
-            const movies = (await axios.get(`https://api.themoviedb.org/3/movie/${location}?api_key=${import.meta.env.VITE_TMDB_KEY}`)).data.results;
+            const movies = (await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${import.meta.env.VITE_TMDB_KEY}`)).data.results;
             const selectedMovies = new Set();
 
             while (selectedMovies.size < 6 && movies.length > 0) {

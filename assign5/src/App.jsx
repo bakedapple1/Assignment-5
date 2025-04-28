@@ -5,6 +5,7 @@ import HomeView from './views/HomeView.jsx';
 import LoginView from './views/LoginView.jsx';
 import RegisterView from './views/RegisterView.jsx';
 import ProtectedRoutes from "./views/ProtectedRoutes.jsx";
+import MoviesView from "./views/MoviesView.jsx";
 import './App.css';
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
           <Route path="/login" element={<LoginView />} />
           <Route path="/register" element={<RegisterView />} />
           <Route element={<ProtectedRoutes />}>
-            <Route path="/movies/*" />
+            <Route path="/movies" element={<MoviesView />} >
+            </Route>
           </Route>
           <Route path="*" element={<ErrorView />} />
         </Routes>

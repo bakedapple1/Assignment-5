@@ -7,12 +7,38 @@
     grid-template-columns: repeat(2, 1fr);
     align-content: center;
     position: fixed;
-    width: 100%;
+    width: 100vw;
     height: 25px;
     z-index: 9999;
 }
 
-.buttons {
+.logged-in {
+    margin-right: 105px;
+    justify-self: right;
+    width: 20vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-content: center;
+}
+
+.welc-msg {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    color: white;
+    align-self: center;
+    justify-self: center;
+}
+
+.log-out {
+    justify-self: right;
+    align-self: center;
+}
+
+.logged-out {
     margin-right: 80px;
     justify-self: right;
     width: 250px;
@@ -23,7 +49,8 @@
 }
 
 .sign-up,
-.log-in {
+.log-in,
+.log-out {
     width: 75px;
     height: 30px;
     border-radius: 10px;
@@ -40,14 +67,16 @@
 }
 
 .sign-up:hover,
-.log-in:hover {
+.log-in:hover,
+.log-out:hover {
     background-color: white;
     border: 2px solid rgb(255, 90, 90);
     color: rgb(255, 90, 90);
 }
 
 .sign-up:active,
-.log-in:active {
+.log-in:active,
+.log-out:active {
     background-color: rgb(255, 190, 190);
 }
 
@@ -66,4 +95,26 @@
         1px -1px 0 black,
         -1px 1px 0 black,
         1px 1px 0 black;
+}
+
+@media (min-width: 1000px) and (max-width: 1500px) {
+    
+    .welc-msg {
+        font-size: 18px;
+    }
+
+    .logged-in {
+        width: 30vw;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .welc-msg {
+        font-size: 15px;
+    }
+
+    .logged-in {
+        width: 35vw;
+    }
 }

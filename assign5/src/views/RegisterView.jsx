@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useStoreContext } from "../context";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "./RegisterView.css";
 
 function RegisterView() {
-    const { setUserData } = useStoreContext();
+    const navigate = useNavigate();
+    const { userData, setUserData } = useStoreContext();
     const [userInfo, setUserInfo] = useState({
         firstName: '',
         lastName: '',
@@ -20,18 +22,16 @@ function RegisterView() {
         if (userInfo.password !== userInfo.confPass) {
             alert("Passwords do not match!");
             setUserInfo((prev) => ({ ...prev, password: '', confPass: '' }));
+        } else if (userData.has(userInfo.email)) {
+            alert("This email has been already registered!");
+            setUserInfo((prev) => ({ ...prev, firstName: '', lastName: '', email: '', password: '', confPass: '', }));
         } else {
-            setUserData((prevData) => {
-                if (prevData.has(userInfo.email)) {
-                    alert("Email has been already registered!");
-                    setUserInfo((prev) => ({ ...prev, firstName: '', lastName: '', email: '', password: '', confPass: '', }));
-                    return prevData;
-                }
-
-                const newData = new Map(prevData);
-                newData.set(userInfo.email, userInfo);
-                return newData;
-            });
+            const newData = new Map(userData);
+            newData.set(userInfo.email, userInfo);
+            setUserData(newData);
+            alert("Account successfully created");
+            console.log(userData);
+            navigate(`/`);
         }
     }
 
@@ -41,7 +41,7 @@ function RegisterView() {
             <div className="register">
                 <div className="register-menu">
                     <h1 className="register-label">Sign Up</h1>
-                    <form className="register-form" id="register-form" onSubmit={(event) => { createAccount(event, userInfo) }}>
+                    <form className="register-form" id="register-form" onSubmit={(event) => { createAccount(event) }}>
                         <label htmlFor="reg-first-name" className="reg-input-label">First Name:</label>
                         <input type="text" name="reg-first-name" className="reg-input" id="reg-first-name" value={userInfo.firstName} onChange={(event) => { setUserInfo((prev) => ({ ...prev, firstName: event.target.value })) }} required />
                         <label htmlFor="reg-last-name" className="reg-input-label">Last Name:</label>

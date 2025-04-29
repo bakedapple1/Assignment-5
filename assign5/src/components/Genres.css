@@ -4,6 +4,7 @@
     flex-direction: column;
     width: 500px;
     height: 1000px;
+    justify-self: center;
 }
 
 .genre-msg {
@@ -70,6 +71,25 @@
     background-color: rgb(255, 190, 190);
 }
 
+@media (min-width: 1000px) and (max-width: 1700px) {
+
+    .genre-select {
+        height: 400px;
+        width: 250px;
+    }
+
+    .genre-container {
+        width: 300px;
+    }
+
+    .inactive-genre,
+    .active-genre {
+        width: 90px;
+        height: 30px;
+        font-size: 15px;
+    }
+}
+
 @media (max-width: 1000px) {
 
     .genre-select {
@@ -79,6 +99,13 @@
     }
 
     .genre-container {
-        width: 300px;
+        width: 250px;
+    }
+
+    .inactive-genre,
+    .active-genre {
+        width: 90px;
+        height: 30px;
+        font-size: 15px;
     }
 }

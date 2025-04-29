@@ -31,3 +31,41 @@
     justify-self: center;
     color: rgb(231, 81, 81);
 }
+
+.pagination {
+    grid-column: 2;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+}
+
+@media (min-width: 1000px) and (max-width: 1700px) {
+    .genres {
+        grid-template-columns: 400px auto;
+    }
+    
+    .genre-movies {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .gen-mov-poster {
+        width: 200px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .genres {
+        grid-template-columns: 300px auto;
+    }
+    
+    .genre-movies {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .gen-mov-poster {
+        width: 150px;
+    }
+}

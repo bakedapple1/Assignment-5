@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useStoreContext } from "../context";
 import "./Genres.css";
 
 function Genres() {
-    const [toggleState, setToggleState] = useState(Array(12).fill(false));
+    const { toggleState, setToggleState, selectedGenres, setSelectedGenres } = useStoreContext();
     const [genresArray, setGenresArray] = useState([
         { genre: "Action", id: 28 },
         { genre: "Adventure", id: 12 },
@@ -18,12 +19,26 @@ function Genres() {
         { genre: "Western", id: 37 }
     ]);
 
+    useEffect(() => {
+        if (selectedGenres.length === 0) {
+            const allGenres = genresArray.map(genre => genre.id);
+            setSelectedGenres(allGenres);
+        }
+    }, []);
+
     function toggleGenre(buttonID) {
-        setToggleState(prevToggle => {
-            const newToggleState = [...prevToggle];
-            newToggleState[buttonID] = !newToggleState[buttonID];
-            return newToggleState;
-        });
+        const newToggleState = [...toggleState];
+        newToggleState[buttonID] = !newToggleState[buttonID];
+
+        const newSelectedGenres = genresArray.filter((genre, index) => newToggleState[index]).map(genre => genre.id);
+
+        if (newSelectedGenres.length === 0) {
+            setSelectedGenres(genresArray.map(genre => genre.id));
+            setToggleState(Array(genresArray.length).fill(false));
+        } else {
+            setSelectedGenres(newSelectedGenres);
+            setToggleState(newToggleState);
+        }
     }
 
     return (

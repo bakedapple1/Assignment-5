@@ -1,0 +1,33 @@
+.genres {
+    display: grid;
+    grid-template-columns: 500px auto;
+}
+
+.genre-movies {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 150px;
+    align-items: center;
+    width: auto;
+    height: 3000px;
+}
+
+.gen-mov {
+    display: grid;
+    width: auto;
+}
+
+.gen-mov-poster {
+    width: 300px;
+    justify-self: center;
+}
+
+.gen-mov-label {
+    font-size: 30px;
+    width: auto;
+    font-family: "Bebas Neue", serif;
+    font-weight: 400;
+    font-style: normal;
+    justify-self: center;
+    color: rgb(231, 81, 81);
+}

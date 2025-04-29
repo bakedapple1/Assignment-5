@@ -16,12 +16,14 @@ function MoviesView() {
     function changePageBy(changeBy) {
         if (page + changeBy < 1) {
             setPage(1);
-            alert("Page out of bounds.");
         } else if (page + changeBy > 500) {
+            if (page == 500) {
+                alert("Page out of bounds.");
+            }
             setPage(500);
-            alert("Page out of bounds.");
         } else {
             setPage(page + changeBy);
+            window.scrollTo({ top: 0 });
         }
     }
 
@@ -50,11 +52,11 @@ function MoviesView() {
                     ))}
                 </div>
                 <div className="pagination" >
-                    <button className="page-button" onClick={() => changePageBy(-10)}>&lt;&lt;</button>
-                    <button className="page-button" onClick={() => changePageBy(-1)}>Prev</button>
+                    <button className={(page != 1) ? "active-ten-page-button" : "inactive-ten-page-button"} onClick={() => changePageBy(-10)}>&lt;&lt;</button>
+                    <button className={(page != 1) ? "active-page-button" : "inactive-page-button"} onClick={() => changePageBy(-1)}>Prev</button>
                     <div className="page-counter" >Page: {page}</div>
-                    <button className="page-button" onClick={() => changePageBy(1)}>Next</button>
-                    <button className="page-button" onClick={() => changePageBy(10)}>&gt;&gt;</button>
+                    <button className={(page != 500) ? "active-page-button" : "inactive-page-button"} onClick={() => changePageBy(1)}>Next</button>
+                    <button className={(page != 500) ? "active-ten-page-button" : "inactive-ten-page-button"} onClick={() => changePageBy(10)}>&gt;&gt;</button>
                 </div>
             </div>
             <Footer />

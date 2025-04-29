@@ -105,11 +105,11 @@ body {
     height: 570px;
     cursor: pointer;
     transition: 1s;
-    transform: scale(0.9);
+    scale: 0.9;
 }
 
 .movie-poster:hover {
-    transform: scale(1);
+    scale: 1;
 }
 
 /* FOOTER SECTION */

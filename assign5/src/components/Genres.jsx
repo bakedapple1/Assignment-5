@@ -24,18 +24,20 @@ function Genres() {
             newToggleState[buttonID] = !newToggleState[buttonID];
             return newToggleState;
         });
-        console.log(buttonID, toggleState);
     }
 
     return (
-        <div>
-            {genresArray.map((genreSelect, index) => (
-                <button key={genreSelect.id} className="genre-selectable" onClick={() => toggleGenre(index)}>
-                    {genreSelect.genre}
-                </button>
-            ))}
+        <div className="genre-container">
+            <h1 className="genre-msg">Select Genres</h1>
+            <div className="genre-select">
+                {genresArray.map((genreSelect, index) => (
+                    <button key={genreSelect.id} className={toggleState[index] ? "active-genre" : "inactive-genre"} onClick={() => toggleGenre(index)}>
+                        {genreSelect.genre}
+                    </button>
+                ))}
+            </div>
         </div>
     );
 }
 
-export default Genres
+export default Genres;

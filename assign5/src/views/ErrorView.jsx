@@ -17,4 +17,4 @@ function ErrorView() {
     );
 }
 
-export default ErrorView
+export default ErrorView;

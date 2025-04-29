@@ -2,7 +2,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"
 
-
 function Featured() {
     const [sixMovies, setSixMovies] = useState([]);
     const navigate = useNavigate();
@@ -13,7 +12,7 @@ function Featured() {
             const selectedMovies = new Set();
 
             while (selectedMovies.size < 6 && movies.length > 0) {
-                selectedMovies.add(movies[Math.floor(Math.random()*movies.length)]);
+                selectedMovies.add(movies[Math.floor(Math.random() * movies.length)]);
             }
             setSixMovies([...selectedMovies]);
         };

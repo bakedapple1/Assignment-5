@@ -9,10 +9,10 @@ function MoviesView() {
     return (
         <div>
             <Header />
-            <Footer />
             <Genres />
+            <Footer />
         </div>
     );
 }
 
-export default MoviesView
+export default MoviesView;

@@ -23,7 +23,6 @@ function LoginView() {
             navigate(`/`);
         } else {
             alert("Email or password is wrong.");
-            setEmail("");
             setPassword("");
         }
     }
@@ -48,4 +47,4 @@ function LoginView() {
     );
 }
 
-export default LoginView
+export default LoginView;

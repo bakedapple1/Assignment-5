@@ -23,8 +23,8 @@ function RegisterView() {
             alert("Passwords do not match!");
             setUserInfo((prev) => ({ ...prev, password: '', confPass: '' }));
         } else if (userData.has(userInfo.email)) {
-            alert("This email has been already registered!");
-            setUserInfo((prev) => ({ ...prev, firstName: '', lastName: '', email: '', password: '', confPass: '', }));
+            alert("This email has already been registered!");
+            setUserInfo((prev) => ({ ...prev, firstName: '', lastName: '', email: '', password: '', confPass: '' }));
         } else {
             const newData = new Map(userData);
             newData.set(userInfo.email, userInfo);
@@ -61,4 +61,4 @@ function RegisterView() {
     );
 }
 
-export default RegisterView
+export default RegisterView;

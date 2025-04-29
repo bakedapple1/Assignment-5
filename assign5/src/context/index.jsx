@@ -8,7 +8,7 @@ export const StoreProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState();
 
     return (
-        <StoreContext.Provider value={{ userData, setUserData, currentUser, setCurrentUser}}>
+        <StoreContext.Provider value={{ userData, setUserData, currentUser, setCurrentUser }}>
             {children}
         </StoreContext.Provider>
     )

@@ -1,10 +1,12 @@
 .genre-container {
-    margin-top: 200px;
+    margin-top: 300px;
     display: flex;
     flex-direction: column;
     width: 500px;
     height: 1000px;
     justify-self: center;
+    position: sticky;
+    top: 150px;
 }
 
 .genre-msg {

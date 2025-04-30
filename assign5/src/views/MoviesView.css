@@ -91,6 +91,13 @@
     background-color: rgb(255, 190, 190);
 }
 
+.inactive-page-button,
+.inactive-ten-page-button {
+    background-color: rgb(252, 150, 150);
+    border: 2px solid rgb(252, 150, 150);
+    cursor: default;
+}
+
 .page-counter {
     color: white;
     font-family: "Montserrat", serif;

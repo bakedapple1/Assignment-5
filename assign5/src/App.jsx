@@ -6,6 +6,7 @@ import LoginView from './views/LoginView.jsx';
 import RegisterView from './views/RegisterView.jsx';
 import ProtectedRoutes from "./views/ProtectedRoutes.jsx";
 import MoviesView from "./views/MoviesView.jsx";
+import DetailView from "./views/DetailView.jsx";
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/login" element={<LoginView />} />
           <Route path="/register" element={<RegisterView />} />
           <Route path="/movies" element={<MoviesView />} />
+          <Route path="/movies/details/:id" element={<DetailView />} />
           <Route element={<ProtectedRoutes />}>
           </Route>
           <Route path="*" element={<ErrorView />} />

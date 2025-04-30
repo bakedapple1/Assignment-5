@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     width: 500px;
-    height: 1000px;
+    height: 500px;
     justify-self: center;
     position: sticky;
     top: 150px;
@@ -74,7 +74,6 @@
 }
 
 @media (min-width: 1000px) and (max-width: 1700px) {
-
     .genre-select {
         height: 400px;
         width: 250px;
@@ -82,6 +81,7 @@
 
     .genre-container {
         width: 300px;
+        margin-top: 200px;
     }
 
     .inactive-genre,

@@ -30,7 +30,6 @@ function RegisterView() {
             newData.set(userInfo.email, userInfo);
             setUserData(newData);
             alert("Account successfully created");
-            console.log(userData);
             navigate(`/`);
         }
     }

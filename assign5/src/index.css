@@ -94,6 +94,7 @@ body {
 .mov-label {
     font-size: 35px;
     width: auto;
+    text-align: center;
 }
 
 .featured-header {

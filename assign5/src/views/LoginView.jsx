@@ -15,12 +15,10 @@ function LoginView() {
         event.preventDefault();
         const user = userData.get(email);
 
-        console.log(userData);
-
         if (user && user.password == password) {
             setCurrentUser(email);
             alert("Logged in!");
-            navigate(`/`);
+            navigate(`/movies`);
         } else {
             alert("Email or password is wrong.");
             setPassword("");

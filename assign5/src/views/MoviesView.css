@@ -31,12 +31,13 @@
 
 .gen-mov-label {
     font-size: 30px;
-    width: auto;
+    width: 350px;
     font-family: "Bebas Neue", serif;
     font-weight: 400;
     font-style: normal;
     justify-self: center;
     color: rgb(231, 81, 81);
+    text-align: center;
 }
 
 .pagination {
@@ -108,7 +109,7 @@
 
 @media (min-width: 1000px) and (max-width: 1700px) {
     .genres {
-        grid-template-columns: 400px auto;
+        grid-template-columns: 350px auto;
     }
     
     .genre-movies {
@@ -117,6 +118,10 @@
     
     .gen-mov-poster {
         width: 200px;
+    }
+
+    .gen-mov-label {
+        width: 250px;
     }
 }
 
@@ -131,5 +136,9 @@
     
     .gen-mov-poster {
         width: 150px;
+    }
+
+    .gen-mov-label {
+        width: 200px;
     }
 }

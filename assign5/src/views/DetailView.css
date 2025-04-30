@@ -89,6 +89,7 @@ li {
     justify-content: center;
     color: white;
     cursor: pointer;
+    user-select: none;
     transition: 0.2s;
 }
 

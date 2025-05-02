@@ -9,7 +9,7 @@ li {
 
 .mov-details {
     margin-top: 120px;
-    height: 1100px;
+    height: 1300px;
 }
 
 .mov-title {
@@ -109,6 +109,10 @@ li {
     .mov-trailer {
         width: 400px;
         height: 250px;
+    }
+
+    .mov-details {
+        height: 1100px;
     }
 }
 

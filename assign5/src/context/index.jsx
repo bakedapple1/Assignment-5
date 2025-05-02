@@ -7,11 +7,11 @@ export const StoreProvider = ({ children }) => {
     const [userData, setUserData] = useState(Map());
     const [currentUser, setCurrentUser] = useState();
     const [toggleState, setToggleState] = useState(Array(12).fill(false));
-    const [selectedGenres, setSelectedGenres] = useState([]);
+    const [selectedGenre, setSelectedGenre] = useState();
     const [pageNum, setPageNum] = useState(1);
 
     return (
-        <StoreContext.Provider value={{ userData, setUserData, currentUser, setCurrentUser, toggleState, setToggleState, selectedGenres, setSelectedGenres, pageNum, setPageNum }}>
+        <StoreContext.Provider value={{ userData, setUserData, currentUser, setCurrentUser, toggleState, setToggleState, selectedGenre, setSelectedGenre, pageNum, setPageNum }}>
             {children}
         </StoreContext.Provider>
     )

@@ -3,7 +3,7 @@ import { useStoreContext } from "../context";
 import "./Genres.css";
 
 function Genres() {
-    const { toggleState, setToggleState, selectedGenres, setSelectedGenres } = useStoreContext();
+    const { toggleState, setToggleState, selectedGenre, setSelectedGenre } = useStoreContext();
     const [genresArray, setGenresArray] = useState([
         { genre: "Action", id: 28 },
         { genre: "Adventure", id: 12 },
@@ -20,23 +20,23 @@ function Genres() {
     ]);
 
     useEffect(() => {
-        if (selectedGenres.length === 0) {
+        if (!selectedGenre) {
             const allGenres = genresArray.map(genre => genre.id);
-            setSelectedGenres(allGenres);
+            setSelectedGenre(allGenres);
         }
     }, []);
 
     function toggleGenre(buttonID) {
-        const newToggleState = [...toggleState];
+        const newToggleState = Array(genresArray.length).fill(false);
         newToggleState[buttonID] = !newToggleState[buttonID];
 
-        const newSelectedGenres = genresArray.filter((genre, index) => newToggleState[index]).map(genre => genre.id);
+        const newSelectedGenre = genresArray.filter((genre, index) => newToggleState[index]).map(genre => genre.id);
 
-        if (newSelectedGenres.length === 0) {
-            setSelectedGenres(genresArray.map(genre => genre.id));
+        if (newSelectedGenre === '') {
+            setSelectedGenre(genresArray.map(genre => genre.id));
             setToggleState(Array(genresArray.length).fill(false));
-        } else {
-            setSelectedGenres(newSelectedGenres);
+        } else {    
+            setSelectedGenre(genresArray[buttonID].id);
             setToggleState(newToggleState);
         }
     }

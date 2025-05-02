@@ -27,16 +27,18 @@ function Genres() {
     }, []);
 
     function toggleGenre(buttonID) {
-        const newToggleState = Array(genresArray.length).fill(false);
+        let newToggleState = [...toggleState];
+        if (!newToggleState[buttonID]) {
+            newToggleState = Array(genresArray.length).fill(false);
+        }
         newToggleState[buttonID] = !newToggleState[buttonID];
 
         const newSelectedGenre = genresArray.filter((genre, index) => newToggleState[index]).map(genre => genre.id);
-
-        if (newSelectedGenre === '') {
+        if (newSelectedGenre.length == 0) {
             setSelectedGenre(genresArray.map(genre => genre.id));
             setToggleState(Array(genresArray.length).fill(false));
         } else {    
-            setSelectedGenre(genresArray[buttonID].id);
+            setSelectedGenre([genresArray[buttonID].id]);
             setToggleState(newToggleState);
         }
     }

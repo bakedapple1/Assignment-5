@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Genres from "../components/Genres";
+import ImgNotAvail from "../assets/img not avail.png";
 import "./DetailView.css";
 
 function DetailView() {
@@ -15,6 +16,7 @@ function DetailView() {
     useEffect(() => {
         async function getData() {
             const movieData = (await axios.get(`https://api.themoviedb.org/3/movie/${param.id}?api_key=${import.meta.env.VITE_TMDB_KEY}`)).data;
+            console.log(movieData);
             setMovie(movieData);
         };
 
@@ -43,7 +45,7 @@ function DetailView() {
                         <div className="mov-tagline">{movie.tagline}</div>
                     </div>
                     <div className="mov-details-content">
-                        <img className="mov-poster" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
+                        <img className="mov-poster" src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : ImgNotAvail} />
                         <div className=" mov-column-two">
                             <div className="mov-release-date">Released: {movie.release_date}</div>
                             <div className="mov-runtime">Runtime: {movie.runtime}min</div>
@@ -55,9 +57,11 @@ function DetailView() {
                             </ul>
                             <div className="mov-languages">Spoken Languages:</div>
                             <ul className="mov-lang-list">
-                                {movie.spoken_languages && movie.spoken_languages.map(genre => (
+                                {movie.spoken_languages.length > 0 ? movie.spoken_languages.map(genre => (
                                     <li className="mov-language" key={genre.name}>{genre.name}</li>
-                                ))}
+                                )) :
+                                    <li className="mov-language">Unknown</li>
+                                }
                             </ul>
                         </div>
                     </div>

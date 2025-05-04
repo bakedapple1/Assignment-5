@@ -2,11 +2,6 @@ li {
     margin-left: 20px;
 }
 
-.details-container {
-    display: grid;
-    grid-template-columns: 500px auto;
-}
-
 .mov-details {
     margin-top: 140px;
     height: 1300px;

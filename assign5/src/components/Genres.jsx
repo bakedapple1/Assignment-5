@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useStoreContext } from "../context";
 import "./Genres.css";
 
 function Genres() {
-    const { toggleState, setToggleState, selectedGenre, setSelectedGenre } = useStoreContext();
-    const [genresArray, setGenresArray] = useState([
+    const navigate = useNavigate();
+    const { toggleState, setToggleState, setSelectedGenre } = useStoreContext();
+    const [genresArray] = useState([
         { genre: "Action", id: 28 },
         { genre: "Adventure", id: 12 },
         { genre: "Animation", id: 16 },
@@ -19,28 +21,14 @@ function Genres() {
         { genre: "Western", id: 37 }
     ]);
 
-    useEffect(() => {
-        if (!selectedGenre) {
-            const allGenres = genresArray.map(genre => genre.id);
-            setSelectedGenre(allGenres);
-        }
-    }, []);
-
-    function toggleGenre(buttonID) {
-        let newToggleState = [...toggleState];
-        if (!newToggleState[buttonID]) {
-            newToggleState = Array(genresArray.length).fill(false);
-        }
-        newToggleState[buttonID] = !newToggleState[buttonID];
-
-        const newSelectedGenre = genresArray.filter((genre, index) => newToggleState[index]).map(genre => genre.id);
-        if (newSelectedGenre.length == 0) {
-            setSelectedGenre(genresArray.map(genre => genre.id));
-            setToggleState(Array(genresArray.length).fill(false));
-        } else {    
-            setSelectedGenre([genresArray[buttonID].id]);
-            setToggleState(newToggleState);
-        }
+    function toggleGenre(buttonIdx) {
+        const newToggleState = Array(genresArray.length).fill(false);
+        newToggleState[buttonIdx] = true;
+        setToggleState(newToggleState);
+        
+        const newSelectedGenre = genresArray[buttonIdx].id;
+        setSelectedGenre(newSelectedGenre);
+        navigate(`/movies/genre/${newSelectedGenre}`);
     }
 
     return (

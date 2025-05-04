@@ -7,7 +7,7 @@ import "./LoginView.css";
 
 function LoginView() {
     const navigate = useNavigate();
-    const { userData, setCurrentUser } = useStoreContext();
+    const { userData, setCurrentUser, selectedGenre } = useStoreContext();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -18,7 +18,7 @@ function LoginView() {
         if (user && user.password == password) {
             setCurrentUser(email);
             alert("Logged in!");
-            navigate(`/movies`);
+            navigate(`/movies/genre/${selectedGenre}`);
         } else {
             alert("Email or password is wrong.");
             setPassword("");

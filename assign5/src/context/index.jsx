@@ -1,5 +1,5 @@
-import { createContext, useContext, useState } from "react";
 import { Map } from "immutable";
+import { createContext, useContext, useState } from "react";
 
 const StoreContext = createContext();
 
@@ -7,7 +7,7 @@ export const StoreProvider = ({ children }) => {
     const [userData, setUserData] = useState(Map());
     const [currentUser, setCurrentUser] = useState();
     const [toggleState, setToggleState] = useState(Array(12).fill(false));
-    const [selectedGenre, setSelectedGenre] = useState([]);
+    const [selectedGenre, setSelectedGenre] = useState("*");
     const [pageNum, setPageNum] = useState(1);
 
     return (

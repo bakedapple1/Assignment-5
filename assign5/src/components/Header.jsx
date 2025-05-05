@@ -8,7 +8,7 @@ function Header() {
 
     function logOut() {
         setCurrentUser(null);
-        alert("Logged out!")
+        alert("Logged out!");
     }
 
     return (

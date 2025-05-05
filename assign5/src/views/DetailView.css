@@ -96,11 +96,11 @@ li {
     .details-container {
         grid-template-columns: 400px auto;
     }
-    
+
     .mov-poster {
         width: 300px;
     }
-    
+
     .mov-trailer {
         width: 400px;
         height: 250px;
@@ -115,11 +115,11 @@ li {
     .details-container {
         grid-template-columns: 400px auto;
     }
-    
+
     .mov-poster {
         width: 300px;
     }
-    
+
     .mov-trailer {
         width: 400px;
         height: 250px;

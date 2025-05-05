@@ -30,7 +30,7 @@ function DetailView() {
         }
 
         getTrailer();
-    }, [movie])
+    }, [movie]);
 
     return (
         <>

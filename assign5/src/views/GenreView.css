@@ -119,11 +119,11 @@
     .genres {
         grid-template-columns: 350px auto;
     }
-    
+
     .genre-movies {
         grid-template-columns: repeat(3, 1fr);
     }
-    
+
     .gen-mov-poster {
         width: 200px;
     }
@@ -137,11 +137,11 @@
     .genres {
         grid-template-columns: 300px auto;
     }
-    
+
     .genre-movies {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .gen-mov-poster {
         width: 150px;
     }

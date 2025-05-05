@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useStoreContext } from "../context";
 import "./Genres.css";
@@ -25,7 +25,7 @@ function Genres() {
         const newToggleState = Array(genresArray.length).fill(false);
         newToggleState[buttonIdx] = true;
         setToggleState(newToggleState);
-        
+
         const newSelectedGenre = genresArray[buttonIdx].id;
         setSelectedGenre(newSelectedGenre);
         navigate(`/movies/genre/${newSelectedGenre}`);

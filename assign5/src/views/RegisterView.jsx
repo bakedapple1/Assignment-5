@@ -13,7 +13,7 @@ function RegisterView() {
         lastName: '',
         email: '',
         password: '',
-        confPass: '',
+        confPass: ''
     });
 
     function createAccount(event) {

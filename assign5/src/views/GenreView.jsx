@@ -6,7 +6,7 @@ import ImgNotAvail from "../assets/img not avail.png";
 import "./GenreView.css";
 
 function GenreView() {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const param = useParams();
     const { pageNum, setPageNum } = useStoreContext();
     const [genreMovies, setGenreMovies] = useState();
@@ -15,9 +15,6 @@ function GenreView() {
         if (pageNum + changeBy < 1) {
             setPageNum(1);
         } else if (pageNum + changeBy > 500) {
-            if (pageNum == 500) {
-                alert("Page out of bounds.");
-            }
             setPageNum(500);
         } else {
             setPageNum(pageNum + changeBy);

@@ -98,9 +98,12 @@
 }
 
 @media (min-width: 1000px) and (max-width: 1500px) {
-
     .welc-msg {
         font-size: 18px;
+    }
+    
+    .hero-label {
+        font-size: 100px;
     }
 
     .logged-in {
@@ -109,12 +112,15 @@
 }
 
 @media (max-width: 1000px) {
-
     .welc-msg {
         font-size: 15px;
     }
 
     .logged-in {
         width: 35vw;
+    }
+    
+    .hero-label {
+        font-size: 75px;
     }
 }

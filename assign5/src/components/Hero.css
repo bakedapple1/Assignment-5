@@ -39,3 +39,15 @@
 .hero:hover .hero-label {
     cursor: pointer;
 }
+
+@media (min-width: 1000px) and (max-width: 1500px) {
+    .hero-label {
+        font-size: 100px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .hero-label {
+        font-size: 75px;
+    }
+}

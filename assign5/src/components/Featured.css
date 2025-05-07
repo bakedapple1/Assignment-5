@@ -45,3 +45,53 @@
 .movie-poster:hover {
     scale: 1;
 }
+
+@media (min-width: 1000px) and (max-width: 1500px) {
+    .featured-movies,
+    .featured-section {
+        width: 1000px;
+    }
+
+    .featured-movies {
+        grid-template-columns: repeat(2, 1fr);
+        height: 1850px;
+    }
+
+    .featured-section {
+        margin-top: 75px;
+    }
+
+    .movie-poster {
+        width: 350px;
+        height: 525px;
+    }
+
+    .featured-header {
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .featured-movies,
+    .featured-section {
+        width: 500px;
+    }
+
+    .featured-movies {
+        grid-template-columns: 1fr;
+        height: 3700px;
+    }
+
+    .featured-section {
+        margin-top: 50px;
+    }
+
+    .movie-poster {
+        width: 350px;
+        height: 525px;
+    }
+
+    .featured-header {
+        font-size: 75px;
+    }
+}

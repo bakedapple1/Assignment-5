@@ -26,3 +26,15 @@
     grid-template-columns: repeat(2, 1fr);
     color: white;
 }
+
+@media (min-width: 1000px) and (max-width: 1500px) {
+    .footer {
+        width: 1000px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .footer {
+        width: 300px;
+    }
+}

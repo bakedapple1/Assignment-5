@@ -131,6 +131,10 @@
     .gen-mov-label {
         width: 250px;
     }
+
+    .invalid-genre {
+        height: 800px;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -148,5 +152,9 @@
 
     .gen-mov-label {
         width: 200px;
+    }
+
+    .invalid-genre {
+        height: 1000px;
     }
 }

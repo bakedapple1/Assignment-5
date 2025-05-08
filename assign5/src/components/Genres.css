@@ -93,7 +93,6 @@
 }
 
 @media (max-width: 1000px) {
-
     .genre-select {
         grid-template-columns: 1fr;
         height: 800px;
